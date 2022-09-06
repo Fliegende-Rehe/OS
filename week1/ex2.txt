@@ -1,0 +1,95 @@
+    1  [200~
+    2  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb~
+    3  sudo apt update
+    4  sudo apt upgrade 
+    5  sudo apt install telegram-desktop
+    6  google-chrome
+    7  sudo apt remove google-chrome
+    8  sudo apt auto-remove google-chrome
+    9  google-chrome
+   10  rm -rf ~/.config/chrome
+   11  google-chrome
+   12  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb~
+   13  sudo apt remove google-chrome
+   14  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb~
+   15  google-chrome
+   16  sudo apt install libva-vdpau-driver
+   17  sudo apt-get install -y libva-vdpau-driver
+   18  sudo apt-get install -y vdpau-va-driver
+   19  sudo dnf makecache --refresh
+   20  sudo yum makecache --refresh
+   21  sudo apt install yum
+   22  apt -help
+   23  sudo apt update 
+   24  sudo apt upgrade 
+   25  sudo apt full-upgrade 
+   26  apt list --upgradable 
+   27  sudo apt install wget
+   28  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   29  sudo dpkg -i google-chrome-stable_current_amd64.deb
+   30  google-chrome
+   31  chromium --disable-gpu
+   32  sudo apt install chromium
+   33  sudo apt update && sudo apt upgrade -y
+   34  sudo apt-get update
+   35  sudo apt-get upgrade
+   36  sudo apt autoremove 
+   37  sudo apt-get dist-upgrade
+   38  sudo apt install chromium-browser
+   39  sudo apt auto-remove chromium-browser
+   40  sudo apt autoremove 
+   41  google-chrome
+   42  sudo apt install libva
+   43  sudo aptitude update
+   44  sudo apt-get -y purge libva2
+   45  google-chrome
+   46  telegram
+   47  telegram-desktop
+   48  sudo apt install telegram-desktop
+   49  sudo snap install --classic code
+   50  sudo apt install git
+   51  sudo adduser git
+   52  cd workspace/
+   53  git init
+   54  mkdir F22_OperSys
+   55  cd F22_OperSys/week1/
+   56  find /usr/bin -name 'gcc' | sort -r | tail -n 5 > ex1.txt
+   57  ex1.txt
+   58  geditex1.txt
+   59  gedit ex1.txt
+   60  find /usr/bin -name 'gcc*' | sort -r | tail -n 5 > ex1.txt
+   61  gedit ex1.txt
+   62  find /usr/bin -name '*gcc*' | sort -r | tail -n 5 > ex1.txt
+   63  gedit ex1.txt
+   64  gedit ex1.sh
+   65  cd workspace/F22_OperSys/week1/
+   66  gedit ex1.txt
+   67  gedit ex1.sh
+   68  get init
+   69  git init
+   70  cd ../
+   71  git init
+   72  git remote add origin https://github.com/Fliegende-Rehe/F22_OperSys
+   73  git pull -u origin master
+   74  git pull origin master
+   75  git remote add origin https://github.com/Fliegende-Rehe/F22_OperSys
+   76  git pull origin master
+   77  git config --global user.name "Fliegende-Rehe"
+   78  git config --global user.email "fliegende-rehe@yandex.ru"
+   79  git config -l
+   80  git remote add origin https://github.com/Fliegende-Rehe/F22_OperSys
+   81  git pull origin master
+   82  git init
+   83  git remote add origin https://github.com/Fliegende-Rehe/F22_OperSys
+   84  cd ../
+   85  cd workspace/
+   86  ls
+   87  git clone https://github.com/Fliegende-Rehe/F22_OperSys
+   88  cd F22_OperSys/
+   89  ls
+   90  mkdir week1
+   91  cd week1/
+   92  find /usr/bin -name '*gcc*' | sort -r | tail -n 5 > ex1.txt
+   93  gedit ex1.txt 
+   94  history
+   95  history > ex2.txt
