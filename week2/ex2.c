@@ -3,9 +3,7 @@
 
 void main() {
 	char str[256];
-	printf("Enter string: ");
-	scanf("%[^,.]", &str); 
-	printf("Result: ");
+	scanf("%[^.]%*c", str); 
 	for(int i = strlen(str); i >= 0; i--)
 		printf("%c", str[i]);
 	printf("\n");	

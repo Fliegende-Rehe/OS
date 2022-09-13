@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #include <limits.h>
 #include <float.h>
 
@@ -10,7 +9,6 @@ void main() {
 	float f = FLT_MAX;
 	double d = DBL_MAX;
 	
-	printf("Size	Value\n");
 	printf("%zu	%d\n", sizeof(i), i);
 	printf("%zu	%d\n", sizeof(us), us);
 	printf("%zu	%ld\n", sizeof(l), l);
