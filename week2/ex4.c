@@ -9,7 +9,7 @@ int main() {
 	char str[256];
 	scanf("%[^\n]%*c", str); 
 	countAll(str);
-    	return 0;
+ 	return 0;
 }
 
 int count(char *str, char c) {

@@ -14,5 +14,7 @@ void main() {
 	printf("%zu	%ld\n", sizeof(l), l);
 	printf("%zu	%f\n", sizeof(f), f);
 	printf("%zu	%f\n", sizeof(d), d);
+	
+	return 0;
 }
 

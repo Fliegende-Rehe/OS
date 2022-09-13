@@ -8,6 +8,7 @@ int main() {
 	if(!convert(n, src, trgt))
     		printf("cannot convert!");
     	printf("\n"); 	
+    	return 0;
 }
 
 int convert(int n, int src, int trgt) {
