@@ -27,7 +27,7 @@ int main() {
         scanf("%d", p + i); //(int *)
 
     // calculate the birth year of the previous students and store them in the same allocated cells
-    for(int i = 0; i < 5; ++i)
+    for (int i = 0; i < 5; ++i)
         *(p + i) = foo(p + i);
 
     // do not forget to free the allocated cells
@@ -37,7 +37,7 @@ int main() {
 }
 
 // write a function foo to calculate the birth year of the person, given the age
-int foo(const int *age){
+int foo(const int *age) {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
     return tm.tm_year + 1900 - *age;
