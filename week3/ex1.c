@@ -24,7 +24,7 @@ int main() {
 
     // print the memory addresses of these cells to stdout
     for (int i = 0; i < SIZE; i++)
-        scanf("%d", p + i); //(int *)
+        scanf("%d", p + i);
 
     // calculate the birth year of the previous students and store them in the same allocated cells
     for(int i = 0; i < 5; ++i)
