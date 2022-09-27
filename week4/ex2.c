@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <wait.h>
 
 /* creates 2 vectors
  * fills them with random int */
@@ -39,14 +40,17 @@ size_t lineLen = 5; // line for product in temp.txt (sum of 99 * 99 len + '\n' s
 const char *fileName = "temp.txt";
 
 void calculation(int **uv) {
-    int n = 2;
-    //scanf("%d", &n);
+    int n;
+    scanf("%d", &n);
     pid_t *pids = (pid_t *) malloc(sizeof(pid_t) * n);
     FILE *file = fopen(fileName, "w");
+
     for (int i = 0; i < n; i++) {
         pid_t pid = fork();
+        int status = 0;
         if (pid != 0) {
             pids[i] = pid;
+            while (wait(&status) > 0);
             continue;
         }
         for (int j = 0; j < vectorSize / n; j++) {
@@ -67,7 +71,7 @@ int aggregation() {
     FILE *file = fopen(fileName, "r");
     int sum = 0;
     char *line = (char *) malloc(sizeof(char) * lineLen);
-    while (getline(&line, &lineLen, file) != -1)
+    while(getline(&line, &lineLen, file) != -1)
         sum += atoi(line);
     free(line);
     fclose(file);
