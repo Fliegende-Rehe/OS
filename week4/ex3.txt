@@ -1,0 +1,5 @@
+There are 8 processes for n = 3. I think the number of processes
+created by a program is related to a power of two. The first and
+second tests showed that 2 ^ the number of fork calls = number of
+processes created, if we count the main process. There are 32
+processes for n = 5. Q.E.D.

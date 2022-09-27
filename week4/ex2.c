@@ -15,13 +15,13 @@ void calculation(int **v);
 
 /* reads elements' products from file
  * aggregates them to get dot product */
-int aggregation();
+long aggregation();
 
 int main() {
     int **vectors = randomization();
     calculation(vectors);
-    int dotProduct = aggregation();
-    printf("%d\n", dotProduct);
+    long dotProduct = aggregation();
+    printf("%ld\n", dotProduct);
 }
 
 const int vectorSize = 120;
@@ -40,8 +40,9 @@ size_t lineLen = 5; // line for product in temp.txt (sum of 99 * 99 len + '\n' s
 const char *fileName = "temp.txt";
 
 void calculation(int **uv) {
-    int n;
-    scanf("%d", &n);
+    char *ptr, input[2];
+    scanf("%s", input);
+    int n = (int) strtol(input, &ptr, 10);
     pid_t *pids = (pid_t *) malloc(sizeof(pid_t) * n);
     FILE *file = fopen(fileName, "w");
 
@@ -67,12 +68,13 @@ void calculation(int **uv) {
     fclose(file);
 }
 
-int aggregation() {
+long aggregation() {
     FILE *file = fopen(fileName, "r");
-    int sum = 0;
+    long sum = 0;
+    char *ptr;
     char *line = (char *) malloc(sizeof(char) * lineLen);
-    while(getline(&line, &lineLen, file) != -1)
-        sum += atoi(line);
+    while (getline(&line, &lineLen, file) != -1)
+        sum += strtol(line, &ptr, 10);
     free(line);
     fclose(file);
     return sum;
