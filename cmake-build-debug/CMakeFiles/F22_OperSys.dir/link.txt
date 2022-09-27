@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/F22_OperSys.dir/week4/ex2.c.o  -o F22_OperSys 

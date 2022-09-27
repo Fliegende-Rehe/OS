@@ -1,0 +1,3 @@
+/home/ruslan/F22_OperSys/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ruslan/F22_OperSys/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ruslan/F22_OperSys/cmake-build-debug/CMakeFiles/F22_OperSys.dir
