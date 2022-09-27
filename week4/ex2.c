@@ -39,8 +39,8 @@ size_t lineLen = 5; // line for product in temp.txt (sum of 99 * 99 len + '\n' s
 const char *fileName = "temp.txt";
 
 void calculation(int **uv) {
-    int n;
-    scanf("%d", &n);
+    int n = 2;
+    //scanf("%d", &n);
     pid_t *pids = (pid_t *) malloc(sizeof(pid_t) * n);
     FILE *file = fopen(fileName, "w");
     for (int i = 0; i < n; i++) {
