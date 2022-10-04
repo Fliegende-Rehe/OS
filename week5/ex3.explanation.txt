@@ -1,1 +1,1 @@
-Since all threads run at the same time, the greater the number of threads, the faster the result is calculated.
+Since all threads start execution at the same time, the greater the number of threads, the faster the result is calculated.

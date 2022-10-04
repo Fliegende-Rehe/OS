@@ -1,52 +1,87 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <pthread.h>
-#include <string.h>
-#include <math.h>
-#include <time.h>
+#include <stdlib.h>
 
-int n, m, sum = 0;
+int is_prime(int n);
 
-void *func();
-int isPrime(int number);
+void write_in_file(long time);
 
-int main(int argc, char **argv) {
-    time_t begin = time(NULL);
+void *prime_counter(void *arg);
 
-    n = (int) strtol(argv[1], NULL, 10);
-    m = (int) strtol(argv[2], NULL, 10);
-    pthread_t *tid = malloc(m * sizeof(pthread_t));
+int primes_count_in_interval(int start, int finish);
+
+typedef struct prime_counter_request {
+    int start, finish;
+} prime_counter_request;
+
+int main(int argc, char *argv[]) {
+    time_t t0 = time(NULL);
+
+    int n = (int) strtol(argv[1], NULL, 10),
+            m = (int) strtol(argv[2], NULL, 10),
+            segment_size = n / m;
+
+    pthread_t *tid =
+            (pthread_t *) malloc(m * sizeof(pthread_t));
+
+    prime_counter_request *requests =
+            (prime_counter_request *) malloc(m * sizeof(prime_counter_request));
+
+    void **results = (void **) malloc(m * sizeof(void *));
+
+    for (int i = 0; i < m; i++) {
+        (requests + i)->start = i * segment_size;
+        (requests + i)->finish = (i + 1) * segment_size;
+        pthread_create(&tid[i], NULL, &prime_counter, (void *) (requests + i));
+    }
+
+    for (int i = 0; i < m; i++) {
+        void *sum = NULL;
+        pthread_join(tid[i], &sum);
+        results[i] = sum;
+    }
+
+    int total_result = 0;
     for (int i = 0; i < m; i++)
-        pthread_create(&tid[i], NULL, &func, NULL);
-    for (int i = 0; i < m; i++)
-        pthread_join(tid[i], NULL);
-    printf("%d\n", sum);
+        total_result += (int) (size_t) results[i]; // *(int *) doesn't work
+    printf("%d\n", total_result);
 
-    time_t end = time(NULL);
+    write_in_file(time(NULL) - t0);
 
-    FILE *file = fopen("ex3.txt", "a");
-    char str[3];
-    sprintf(str, "%ld ", end - begin);
-    fputs(str, file);
-
-    fclose(file);
     free(tid);
-    pthread_exit(NULL);
+    free(requests);
+    free(results);
+
+    exit(EXIT_SUCCESS);
 }
 
-void *func() {
-    static int k = -1;
-    k++;
-    int st = k * n / m,
-            fn = (k + 1) * n / m;
-    for (int j = st; j < fn; j++) {
-        if (isPrime(j)) sum++;
-    }
+void *prime_counter(void *arg) {
+    struct prime_counter_request *a = (struct prime_counter_request *) arg;
+    pthread_exit((void *) (size_t) (primes_count_in_interval(a->start, a->finish)));
 }
 
-int isPrime(int number) {
-    for (int j = 2; j <= (int) sqrt(number) + 1; j++) {
-        if (number % j == 0) return 0;
-    }
+int is_prime(int n) {
+    if (n <= 1)
+        return 0;
+    for (int d = 2; d * d <= n; d++)
+        if (n % d == 0)
+            return 0;
     return 1;
+}
+
+int primes_count_in_interval(int start, int finish) {
+    int ret = 0;
+    for (int i = start; i < finish; i++)
+        if (is_prime(i) != 0)
+            ret++;
+    return ret;
+}
+
+void write_in_file(long time) {
+    FILE *file = fopen("ex3.txt", "a");
+    char *str = (char *) malloc(sizeof(char) * 3);
+    sprintf(str, "%ld ", time);
+    fputs(str, file);
+    free(str);
+    fclose(file);
 }

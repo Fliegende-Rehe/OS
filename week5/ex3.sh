@@ -1,10 +1,11 @@
 #!/bin/sh
 
-gcc -pthread ex3.c -o ex3 -lm
+gcc -pthread ex3.c -o ex3
 
-> ex3.txt
+: > ex3.txt
 
 for i in 1 2 4 10 100
 do
   ./ex3 10000000 $i
+  printf "\n"
 done
