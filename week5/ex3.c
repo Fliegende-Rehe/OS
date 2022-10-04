@@ -35,6 +35,12 @@ int main(int argc, char *argv[]) {
         pthread_create(&tid[i], NULL, &prime_counter, (void *) (requests + i));
     }
 
+    if (n % m == 0) {
+        (requests + m)->start = n - n % m + 1;
+        (requests + m)->finish = n;
+        pthread_create(&tid[m], NULL, &prime_counter, (void *) (requests + m));
+    }
+
     for (int i = 0; i < m; i++) {
         void *sum = NULL;
         pthread_join(tid[i], &sum);

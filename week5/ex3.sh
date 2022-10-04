@@ -7,5 +7,4 @@ gcc -pthread ex3.c -o ex3
 for i in 1 2 4 10 100
 do
   ./ex3 10000000 $i
-  printf "\n"
 done

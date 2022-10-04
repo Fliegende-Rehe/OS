@@ -1,0 +1,1 @@
+Every time a thread accessed global variables, the mutex restricted other threads. This made it possible to avoid race conditions. Compared to the previous method, this one is slower because some threads are waiting for the variables to be accessed.
