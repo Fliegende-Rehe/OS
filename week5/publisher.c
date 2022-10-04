@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 
         printf("Enter message: ");
         fgets(input, SIZE, stdin);
-        for(int i = 0; i < atoi(argv[1]); i++){
+        for(int i = 0; i < (int) strtol(argv[1], NULL, 10); i++){
             if ((write(pipe, input, SIZE)) == -1)
                 return 2;
         }

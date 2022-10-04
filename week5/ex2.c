@@ -1,36 +1,31 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
 #include <string.h>
-#include <stdint.h>
 
-const int n = 5;
+#define n 5
 
 // create array of struct
 struct Thread {
-    int id;
+    long id;
     int i;
     char message[256];
-};struct Thread thread[10];
+};struct Thread thread[n];
 
 // fill struct elements during thread routine
-int j = 0;
 void *routine(void *arg) {
-    thread[j].id = (uintptr_t) arg;
+    static int j = -1; j++;
+    thread[j].id = pthread_self();
     thread[j].i = j;
-    sprintf(thread[j].message, "Hello form thread %d", thread[j].i);
-    printf("id %d\nmessage %s\n\n", thread[j].id, thread[j].message);
-    pthread_exit(NULL);
+    sprintf(thread[j].message, "Hello from thread %d", thread[j].i);
+    printf("id %ld\nmessage %s\n\n", thread[j].id, thread[j].message);
 }
 
 int main(void) {
-    pthread_t pthread[n];
-    for (j = 0; j < n; ++j) {
-        pthread_create(&pthread[j], NULL, &routine, (void *) pthread[j]);
+    pthread_t pthread;
+    for (int j = 0; j < n; ++j) {
+        pthread_create(&pthread, NULL, &routine, (void *) pthread);
         printf("Thread %d is created\n", j);
-        pthread_join(pthread[j], NULL);
     }
+    pthread_exit(NULL);
 }
-
-
-
