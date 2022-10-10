@@ -5,6 +5,8 @@ int n;
 
 void processSort(int *a, int *b, int st, int fn);
 
+void SJFsort(int *at, int *bt);
+
 int *getWT(int const *at, int const *bt);
 
 int *getCT(int const *at, int const *wt, int const *bt);
@@ -13,7 +15,7 @@ int *getTAT(int const *ct, int const *at);
 
 float getAvg(int const *arr);
 
-void swap(int *xp, int *yp);
+void swap(int *x, int *y);
 
 int main() {
     printf("Enter processes number: ");
@@ -26,6 +28,7 @@ int main() {
         scanf("%d %d", (at + i), (bt + i));
 
     processSort(at, bt, 0, n); // sort table by arrival time
+    SJFsort(at, bt);
 
     int *wt = getWT(at, bt);
     int *ct = getCT(at, wt, bt);
@@ -61,6 +64,15 @@ void processSort(int *a, int *b, int st, int fn) {
             }
 }
 
+void SJFsort(int *at, int *bt) {
+    int st = 0;
+    for (int i = 1; i < n; i++) {
+        if (at[i] == at[i - 1] && i != n - 1) continue;
+        processSort(bt, at, st, i == n - 1 ? i + 1: i);
+        st = i;
+    }
+}
+
 int *getWT(int const *at, int const *bt) {
     int *wt = (int *) malloc(sizeof(int) * n);
     wt[0] = 0;
@@ -92,8 +104,8 @@ float getAvg(int const *arr) {
     return s / (float) n;
 }
 
-void swap(int *xp, int *yp) {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
