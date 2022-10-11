@@ -1,3 +1,3 @@
-The results showed that when using FCFS algorithm, the average waiting time is twice that of SJF.
-In addition, FCFS average turnaround time is slightly larger than SJF.
-This suggests that SJF algorithm is more effective.
+The results showed that when using FCFS algorithm, the average waiting time is twice that of SJN.
+In addition, FCFS average turnaround time is slightly larger than SJN.
+This suggests that SJN algorithm is more effective.

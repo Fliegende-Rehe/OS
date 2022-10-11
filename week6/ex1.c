@@ -21,7 +21,7 @@ int main() {
 
     int *at = (int *) malloc(sizeof(int) * n);
     int *bt = (int *) malloc(sizeof(int) * n);
-    printf("\nEnter arrival time and burst time for each process (separate it by space):\n");
+    printf("\nEnter arrival time and burst time for each process (separate them by space):\n");
     for (int i = 0; i < n; i++)
         scanf("%d %d", (at + i), (bt + i));
 

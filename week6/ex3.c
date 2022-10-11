@@ -1,25 +1,27 @@
 #include <stdio.h>
 #include <malloc.h>
 
-int n;
+#define TRUE 1
+#define FALSE 0
+#define BOOL int
+
+int n, q;
 
 void processSort(int *a, int *b, int st, int fn);
 
-void SJN(int *at, int *bt);
-
-int *getWT(int const *at, int const *bt);
+int *getWT(int const *bt);
 
 int *getCT(int const *at, int const *wt, int const *bt);
 
-int *getTAT(int const *ct, int const *at);
+int *getTAT(int const *bt, int const *wt);
 
 float getAvg(int const *arr);
 
 void swap(int *x, int *y);
 
 int main() {
-    printf("Enter processes number: ");
-    scanf("%d", &n);
+    printf("Enter processes number and quantum (separate them by space):\n");
+    scanf("%d %d", &n, &q);
 
     int *at = (int *) malloc(sizeof(int) * n);
     int *bt = (int *) malloc(sizeof(int) * n);
@@ -28,11 +30,10 @@ int main() {
         scanf("%d %d", (at + i), (bt + i));
 
     processSort(at, bt, 0, n); // sort table by arrival time
-    SJN(at, bt);
 
-    int *wt = getWT(at, bt);
+    int *wt = getWT(bt);
     int *ct = getCT(at, wt, bt);
-    int *tat = getTAT(ct, at);
+    int *tat = getTAT(bt, wt);
 
     printf("\n№   AT   BT   CT   TAT   WT\n");
 
@@ -64,22 +65,22 @@ void processSort(int *a, int *b, int st, int fn) {
             }
 }
 
-void SJN(int *at, int *bt) {
-    int st = 0;
-    for (int i = 1; i < n; i++) {
-        if (at[i] == at[i - 1] && i != n - 1) continue;
-        processSort(bt, at, st, i == n - 1 ? i + 1: i);
-        st = i;
-    }
-}
-
-int *getWT(int const *at, int const *bt) {
+int *getWT(int const *bt) {
     int *wt = (int *) malloc(sizeof(int) * n);
-    wt[0] = 0;
-    for (int i = 1; i < n; i++)
-        if (at[i] == at[i - 1])
-            wt[i] = bt[i - 1] + wt[i - 1];
-        else wt[i] = 0;
+    int rem_bt[n], t = 0;
+    for (int i = 0; i < n; i++)
+        rem_bt[i] = bt[i];
+    BOOL done;
+    do {
+        done = TRUE;
+        for (int i = 0; i < n; i++) {
+            if (rem_bt[i] <= 0) continue;
+            done = FALSE;
+            t += rem_bt[i] > q ? q : rem_bt[i];
+            if (rem_bt[i] <= q) wt[i] = t - bt[i];
+            rem_bt[i] = rem_bt[i] > q ? rem_bt[i] - q : 0;
+        }
+    } while (done != TRUE);
     return wt;
 }
 
@@ -90,10 +91,10 @@ int *getCT(int const *at, int const *wt, int const *bt) {
     return ct;
 }
 
-int *getTAT(int const *ct, int const *at) {
+int *getTAT(int const *bt, int const *wt) {
     int *tat = (int *) malloc(sizeof(int) * n);
     for (int i = 0; i < n; i++)
-        tat[i] = ct[i] - at[i];
+        tat[i] = bt[i] + wt[i];
     return tat;
 }
 
