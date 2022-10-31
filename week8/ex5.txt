@@ -1,0 +1,7 @@
+The physical address simply refers to the location of the data stored
+on the actual RAM chip. At a certain address, we can access some data
+on the physical chip. The virtual address can be used to obtain a
+physical address with a virtual page table address using the MMU
+(Memory Management Unit). Map virtual addresses to physical memory
+addresses. When software accesses a region of the address space that
+is not in physical memory, the device obtains it from virtual memory.
