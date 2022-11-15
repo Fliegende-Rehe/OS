@@ -1,0 +1,1 @@
+CMakeLists.txt not found in \\wsl$\Ubuntu\home\ruslan\F22_OperSys\week10 Select CMakeLists.txt

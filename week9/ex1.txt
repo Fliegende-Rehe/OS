@@ -1,0 +1,12 @@
+
+10 page frames:
+Hit 10 Miss 990
+Hit/Miss ratio 0.010101
+
+50 page frames:
+Hit 55 Miss 945
+Hit/Miss ratio 0.058201
+
+100 page frames:
+Hit 92 Miss 908
+Hit/Miss ratio 0.101322

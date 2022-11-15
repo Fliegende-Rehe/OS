@@ -1,0 +1,13 @@
+-rw-rw-r-- 1 ruslan ruslan 6 Nov 14 15:28 _ex3.txt
+-rwxrw-rwx 1 ruslan ruslan 6 Nov 14 15:28 _ex3.txt
+-rwxrwxrwx 1 ruslan ruslan 6 Nov 14 15:28 _ex3.txt
+
+What does 660 mean for ex3.txt?
+Users belonging to your group can change this file,
+no one else can access it at all.
+
+What does 775 mean for ex3.txt?
+Standard file sharing mode for groups.
+
+What does 777 mean for ex3.txt?
+Everyone can do anything with this file.
