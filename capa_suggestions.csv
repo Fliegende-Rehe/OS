@@ -1,0 +1,46 @@
+Commit SHA,Message,Suggestion
+4b1926508bc16e6e348aa43e1961ab2805a76e6b,Delete .gitblah-kFYi.swp,No specific recommendations
+23a66c9a70d13e6855f2a849db68703ace229b39,Delete .idea directory,Review large deletions (Many deletions may indicate a fix)
+861e72c99cc0ce57d3c43dd810a07a8089073d4b,A bunch of horrible changes,Review large additions; Review total changes for potential issues (Too many changes since last commit); Review changes in multiple files (Many files updated, expected compatibility issues)
+0b284e5d7b6a9a874a68168c22848e4eae1d2b43,asd,No specific recommendations
+f6b94c416eefdd4db115d3f4d217aae03ef768d3,practice part is ready,No specific recommendations
+8400aec51899688dc53267ceb3b1b08713d64faf,week7 complete,No specific recommendations
+985fbce10f5c71d94af70bc6987d76c0e095c7c3,compelete ex3 and clean up old code,No specific recommendations
+8802b97680a1c328e4dd536c7e5b9f0feb5b9c92,add ex2 and fix ex1,No specific recommendations
+0be2128175a5be1b1e497a94afb5529cb68bc49c,complete ex1,No specific recommendations
+a7b6a3e5d34cab7fd463c65890a3f463f3df9009,fix ex3 a little and solve ex4,No specific recommendations
+a4bedad53041593bc6f552fa5e47ed4ab66cf29c,rewrite ex3 using TAs' teamplate,Review large deletions (Many deletions may indicate a fix)
+a73b5bf3094b90a2e661e97116fa38ad3ea5c421,add ex3 and fix ex2,No specific recommendations
+30d2cb4ab0c62ac7062a854399112e8feea315c4,Complete ex2 and fix ex1,Review large deletions (Many deletions may indicate a fix)
+fe5057346dba21e7ae78c9c981e452f0347b8329,ex1 is complete,No specific recommendations
+75f4a167da1c7d6e0dcbab9ec09cc57907918f2a,try ex4 add cd command,No specific recommendations
+9205d7d0439d9cf473c99499becae725362b60d1,add ex3 and clean up ex2,No specific recommendations
+332bb590c3db837d2a9370bbf227bca1e82db8cb,fix ex2.c,No specific recommendations
+099924f200dc84210807360dc7d979e702e16eba,ex2 is complete,Review large deletions (Many deletions may indicate a fix)
+e782cca7111f7861da0c551547845a2c2c0de89c,Merge branch 'main' of https://github.com/Fliegende-Rehe/F22_OperSys into main,No specific recommendations
+99e349209780f76dba92e4854fa95307d55553ad,ex1 is complete,No specific recommendations
+4d3b96abafded5044f10277f916685355f1cdd10,ex1 is complete,No specific recommendations
+d1e3fce3972e51489da460b2231ae83ea0f3e734,ex3 template,No specific recommendations
+2a822aa5e62ec1d0a5e4be0b516ce3a7fe1f8a5a,Merge branch 'main' of https://github.com/Fliegende-Rehe/F22_OperSys into main,No specific recommendations
+dd5b4b365af1f8a1095dc4e25d40c286949b5943,add ex2,No specific recommendations
+ea2e45b62f4cdcbee9792b936d5f352027f8f34f,Update ex1.c,No specific recommendations
+1401b62ed0b061e42acc5bd03c4fc9e137223afa,Delete ex1,No specific recommendations
+650d057e3428a1e4b9b7159e862d3db86757ffb4,Delete ex1.sh,No specific recommendations
+81a1df1b975987dcc9fba38e55446a45ef052f59,ex1,No specific recommendations
+1f08c31da2e555572b4a18f45a68c2388ed9a0ca,setup enviroment,No specific recommendations
+a1331ff588ecc5258c6188e0a4e89289caae1fee,set up wls on windows,No specific recommendations
+4bf56940f30100b05ffce4adf56213d27521eb65,1 - 5,No specific recommendations
+a7933c264c523c6d8b29fc13d2ca921fe37fb878,from 1 to 4 ex,No specific recommendations
+189f4cb764adcb444959d22f957bb55c0ae3f7dc,ex3,No specific recommendations
+e7885e30f0f3d18592c5d06d2a942d6cd798f09a,ex2.c,No specific recommendations
+75a4659217c4f491d7a5f56cd22eaf2a7296f6f6,ex1.c,No specific recommendations
+03f2164cff33ea2dda17a9043f8bb5a20347c989,.sh,No specific recommendations
+24a21e92cba62e9ff239a297735670106faf9717,task 4,No specific recommendations
+e9f5c606e87e50b8c0c8f32e716091602ae289c1,3 task,No specific recommendations
+8e8bf35c74cecb86deb721771778970b6d75b487,Delete .idea directory
+
+clear garbage,No specific recommendations
+65bdc781f874b40c1f2bbc47134e0c4a0c281df8,1 + 2 task,No specific recommendations
+d8a47242ba2518fc95e330919a4a06bcbdc48ff8,week1,No specific recommendations
+11f6eff3fbbd5c3134ebbc6fc3a9139bfb57d484,week01,No specific recommendations
+8b13c3afa37137bd9285a308f63d4955d0c4a679,Initial commit,No specific recommendations
