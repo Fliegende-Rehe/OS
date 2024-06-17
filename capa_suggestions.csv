@@ -1,0 +1,5 @@
+Commit SHA,Message,Suggestion
+23a66c9a70d13e6855f2a849db68703ace229b39,Delete .idea directory, | Review large deletions (Many deletions may indicate a fix) |
+861e72c99cc0ce57d3c43dd810a07a8089073d4b,A bunch of horrible changes, | Review large additions |;  | Review total changes for potential issues (Too many changes since last commit) |;  | Review changes in multiple files (Many files updated, expected compatibility issues) |; | Review large time gap between commits (Large time gap between commits may indicate a slow development process) |
+0b284e5d7b6a9a874a68168c22848e4eae1d2b43,asd,| Review large time gap between commits (Large time gap between commits may indicate a slow development process) |
+985fbce10f5c71d94af70bc6987d76c0e095c7c3,compelete ex3 and clean up old code,| Review large time gap between commits (Large time gap between commits may indicate a slow development process) |
